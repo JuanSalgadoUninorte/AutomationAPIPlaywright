@@ -1,4 +1,4 @@
-import test from '@playwright/test';
+import test, { expect } from '@playwright/test';
 import Logger from '../../utils/Logger';
 import { CreateNewPet } from '../../tasks/create/createNewPet';
 import { CheckPetWasCreated } from '../../tasks/create/checkPetWasCreated';
@@ -26,6 +26,34 @@ test('Must create a new pet', async ({ request }) => {
   const newPetResponse = await createNewPet.withInfo(newPetRequest);
   const checkPetWasCreated = new CheckPetWasCreated(newPetRequest);
   await checkPetWasCreated.withInfo(newPetResponse);
+});
+
+test('Must create a new pet - public', {tag: "@prod"}, async ({ request }) => {
+  const createPetResponse = await request.post('https://petstore.swagger.io/v2/pet', {
+  data: {
+    id: 0,
+    category: {
+      id: 0,
+      name: "string"
+    },
+    name: "doggie",
+    photoUrls: [
+      "string"
+    ],
+    tags: [
+      {
+        id: 0,
+        name: "string"
+      }
+    ],
+    status: "available"
+  }
+  });
+
+  expect(createPetResponse.status()).toBe(200);
+  const createPetResponseJson = await createPetResponse.json();
+  expect(createPetResponseJson.id).toBeTruthy();
+
 });
 
 // test.afterAll(async ({ request }) => {

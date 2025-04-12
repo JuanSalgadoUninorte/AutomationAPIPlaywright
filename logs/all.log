@@ -3,3 +3,6 @@
 2025-04-11 19:17:55 [31merror[39m: [31mError creating pet[39m
 2025-04-11 19:17:55 [32minfo[39m: [32mPet created successfully[39m
 2025-04-11 19:17:56 [32minfo[39m: [32mAfter all tests --> Delete the database[39m
+2025-04-11 19:45:05 [32minfo[39m: [32mBefore all tests --> Create a new database[39m
+2025-04-11 19:45:38 [32minfo[39m: [32mBefore all tests --> Create a new database[39m
+2025-04-11 19:45:42 [32minfo[39m: [32mAfter all tests --> Delete the database[39m
