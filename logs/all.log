@@ -1,0 +1,5 @@
+2025-04-11 19:17:53 [32minfo[39m: [32mBefore all tests --> Create a new database[39m
+2025-04-11 19:17:55 [32minfo[39m: [32mCreating a new pet[39m
+2025-04-11 19:17:55 [31merror[39m: [31mError creating pet[39m
+2025-04-11 19:17:55 [32minfo[39m: [32mPet created successfully[39m
+2025-04-11 19:17:56 [32minfo[39m: [32mAfter all tests --> Delete the database[39m
